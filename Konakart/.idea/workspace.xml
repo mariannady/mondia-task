@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d5684556-c2ae-4d93-9ab7-779588d192f4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Konakart.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/ConfirmationPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/ConfirmationPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Pages/GamesDetailsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/GamesDetailsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/GamesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/GamesPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/SucceededOrderPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/SucceededOrderPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/FirstScenario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/SubmitOrderScenario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/Konakart.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Tests/FirstScenario.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/ShoppingCartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/ShoppingCartPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/SubmitOrderScenario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/SubmitOrderScenario.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -87,24 +81,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FirstScenario.CheckFirstScenario (2)" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Konakart" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Tests" />
-      <option name="MAIN_CLASS_NAME" value="Tests.FirstScenario" />
-      <option name="METHOD_NAME" value="CheckFirstScenario" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="FirstScenario.CheckFirstScenario (3)" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Konakart" />
       <extension name="coverage">
@@ -159,13 +135,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SubmitOrderScenario.Run" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Konakart" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="Tests.SubmitOrderScenario" />
+      <option name="METHOD_NAME" value="Run" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="PARAMETERS" value="0" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.SubmitOrderScenario" />
+        <item itemvalue="TestNG.SubmitOrderScenario.Run" />
         <item itemvalue="TestNG.FirstScenario" />
         <item itemvalue="TestNG.FirstScenario.CheckFirstScenario (4)" />
         <item itemvalue="TestNG.FirstScenario.CheckFirstScenario (3)" />
-        <item itemvalue="TestNG.FirstScenario.CheckFirstScenario (2)" />
       </list>
     </recent_temporary>
   </component>
@@ -202,9 +197,9 @@
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/Tests/SubmitOrderScenario.java</url>
-          <line>113</line>
-          <option name="timeStamp" value="45" />
+          <url>file://$PROJECT_DIR$/src/main/java/Pages/GamesDetailsPage.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="50" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

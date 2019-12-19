@@ -7,6 +7,7 @@ public class ShoppingCartPage extends BaseTest{
     public ShoppingCartPage(WebDriver driver) {
         super(driver);
     }
+
     public String GetgameNameInCartPage(){
         var gameName=driver.findElement(By.className("text-link")).getText();
         return gameName;

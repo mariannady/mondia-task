@@ -34,15 +34,26 @@ public class GamesDetailsPage extends BaseTest{
         Actions.click(addToCartButton).perform();
     }
 
-    /*public String GetTitleOfAddedItemToCart(){
-        var gameTitle= driver.findElement(By.cssSelector("#shopping-cart-items > .shopping-cart-item:nth-child(1) > .shopping-cart-item-title"));
+    public String GetTitleOfAddedItemToCart(){
+        Actions.moveToElement(driver.findElement(By.id("shopping-cart"))).perform();
+        var selector = By.cssSelector("#shopping-cart-container #shopping-cart-items > .shopping-cart-item:nth-child(1) > .shopping-cart-item-title");
+        WebDriverWait wait = new WebDriverWait(driver,30);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(selector));
+        var gameTitle= driver.findElement(selector);
         return gameTitle.getText();
     }
 
-    public String GetQuantityOfAddedItemToCart(){
-        var gameQuantity=driver.findElement(By.id("shopping-cart-container")).findElement(By.cssSelector(".shopping-cart-item:first-child .shopping-cart-item-price"));
-        return gameQuantity.getText();
-    }*/
+    public int GetQuantityOfAddedItemToCart(){
+        Actions.moveToElement(driver.findElement(By.id("shopping-cart"))).perform();
+        var selector = By.cssSelector("#shopping-cart-container #shopping-cart-items > .shopping-cart-item:nth-child(1) > .shopping-cart-item-price");
+        WebDriverWait wait = new WebDriverWait(driver,30);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(selector));
+
+
+        var gameQuantity=driver.findElement(By.id("shopping-cart-container")).findElement(selector);
+        var quantityText = gameQuantity.getText();
+        return Integer.parseInt(quantityText.substring(quantityText.indexOf("Quantity: ") + 10));
+    }
 
     public ShoppingCartPage ClickonShoppingCart(){
         var shoppingCartButton=driver.findElement(By.className("shopping-cart-title"));

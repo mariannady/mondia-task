@@ -2,8 +2,7 @@ package Tests;
 import Pages.*;
 import org.testng.annotations.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.*;
 
 @Test
 public class SubmitOrderScenario extends PageBase {
@@ -18,12 +17,8 @@ public class SubmitOrderScenario extends PageBase {
         var gamesDetailsPage = GamesPageChecks(gamesPage);
 
         var shoppingCart = GamesDetailsPageChecks(gamesDetailsPage);
-        /*String gameTitleInCart=gamesDetailsPage1.GetTitleOfAddedItemToCart();
-        String gameQuantityInCart=gamesDetailsPage1.GetQuantityOfAddedItemToCart();
-        assertEquals("Incorrect game name displays",gameTitleInCart,gameNameInLandingPage);
-        assertTrue("Incorrect quantity displays",gameQuantityInCart.contains("Quantity:" + quantity));*/
 
-        var loginActionPage = ShoppingCartPageCheckss(shoppingCart);
+        var loginActionPage = ShoppingCartPageChecks(shoppingCart);
 
         var deliveryDetailsPage=LoginActionPageChecks(loginActionPage);
 
@@ -95,7 +90,7 @@ public class SubmitOrderScenario extends PageBase {
         return loginActionPage.ClickingonCheckOutAsGuestButton();
     }
 
-    private LoginActionPage ShoppingCartPageCheckss(ShoppingCartPage shoppingCart) {
+    private LoginActionPage ShoppingCartPageChecks(ShoppingCartPage shoppingCart) {
         var GameNameInCartPage=shoppingCart.GetgameNameInCartPage();
         var GameQuantityInCartPage=shoppingCart.GetgameQuantityInCartPage();
         assertEquals("Incorrect game name displays",GameNameInCartPage,_gameNameInGameDetailsPage);
@@ -117,21 +112,23 @@ public class SubmitOrderScenario extends PageBase {
         return gamesPage.ClickonFirstGame();
     }
 
-    private ShoppingCartPage GamesDetailsPageChecks(GamesDetailsPage gamesDetailsPage){
+    private ShoppingCartPage GamesDetailsPageChecks(GamesDetailsPage gamesDetailsPage) {
+        _gameNameInGameDetailsPage = gamesDetailsPage.GetGameNameInGameDetailsPage();
+        assertEquals("Incorrect game name Displayed in details page", _gameNameInLandingPage, _gameNameInGameDetailsPage);
 
-        _gameNameInGameDetailsPage=gamesDetailsPage.GetGameNameInGameDetailsPage();
-        assertEquals("Incorrect game name Displayed in details page",_gameNameInLandingPage,_gameNameInGameDetailsPage);
+        int actualScreenShotsCount = gamesDetailsPage.GetScreenShotsCountInGameDetailsPage();
+        int expectedNumberofScreenShots = 4;
+        assertEquals("Screen shots number isn't as expected", actualScreenShotsCount, expectedNumberofScreenShots);
 
-        int actualScreenShotsCount=gamesDetailsPage.GetScreenShotsCountInGameDetailsPage();
-        int expectedNumberofScreenShots=4;
-        assertEquals("Screen shots number isn't as expected",actualScreenShotsCount,expectedNumberofScreenShots);
-
-        _gameQuantityInGameDetailsPage= 2;
+        _gameQuantityInGameDetailsPage = 2;
         gamesDetailsPage.SelectQuantity(Integer.toString(_gameQuantityInGameDetailsPage));
+        gamesDetailsPage.ClickonAddToCartButton();
 
-         gamesDetailsPage.ClickonAddToCartButton();
+        String gameTitleInCart=gamesDetailsPage.GetTitleOfAddedItemToCart();
+        int gameQuantityInCart=gamesDetailsPage.GetQuantityOfAddedItemToCart();
+        assertEquals("Incorrect game name displays",gameTitleInCart,_gameNameInLandingPage);
+        assertEquals("Incorrect quantity displays", gameQuantityInCart,_gameQuantityInGameDetailsPage);
 
-         return gamesDetailsPage.ClickonShoppingCart();
-
+        return gamesDetailsPage.ClickonShoppingCart();
     }
 }
