@@ -52,8 +52,8 @@ public class GamesPage extends BaseTest{
         assertEquals(shoppingCartValue, " " + "(" + ItemsCount +")","Item not added");
     }
 
-    public WebElement GetGameNameSelector() {
-        WebElement gameNameSelector = driver.findElement(By.xpath("//a[@href='SelectProd.action?prodId=63']"));
+    private WebElement GetGameNameSelector() {
+        WebElement gameNameSelector = driver.findElement(By.cssSelector("#item-overview .items li:first-child .item-title"));
         return gameNameSelector;
     }
 

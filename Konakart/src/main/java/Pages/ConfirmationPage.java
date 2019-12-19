@@ -41,9 +41,4 @@ public class ConfirmationPage extends BaseTest{
         return new SucceededOrderPage(driver);
     }
 
-    public MyAccountPage GotoMyAccount() {
-        var myAccount=driver.findElement(By.id("my-account"));
-        myAccount.click();
-        return new MyAccountPage(driver);
-    }
 }

@@ -11,4 +11,10 @@ public class SucceededOrderPage extends BaseTest{
         var currentOrderStatus=driver.findElement(By.id("page-title"));
         return currentOrderStatus.getText();
     }
+
+    public MyAccountPage GotoMyAccount() {
+        var myAccount=driver.findElement(By.id("my-account"));
+        myAccount.click();
+        return new MyAccountPage(driver);
+    }
 }

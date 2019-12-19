@@ -1,7 +1,9 @@
 package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class GamesDetailsPage extends BaseTest{
     public GamesDetailsPage(WebDriver driver) {
@@ -9,6 +11,8 @@ public class GamesDetailsPage extends BaseTest{
     }
 
     public String GetGameNameInGameDetailsPage() {
+        WebDriverWait wait = new WebDriverWait(driver,30);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("page-title")));
         var gameNameInDetailsPageSelector = driver.findElement(By.id("page-title"));
         var gameName = gameNameInDetailsPageSelector.getText();
         return gameName;
